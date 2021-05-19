@@ -1,0 +1,15 @@
+.btn-link {
+    text-decoration: none !important;
+}
+
+nav{
+    box-shadow: 0px 3px 5px 5px black;
+}
+
+.content{
+    background-color: #E7E9EB;
+}
+
+.section{
+    background-color:white;
+}

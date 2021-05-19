@@ -1,0 +1,30 @@
+.anuncio-vaga{
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom:1rem;
+}
+
+.vaga-quantidade-disponivel{
+    text-align:right;
+}
+
+.text-postado-em{
+    font-size: 13px !important;
+}
+
+.vaga-descricao{
+    font-size:14px;
+}
+
+.btn-vaga{
+    font-size: 14px;
+}
+
+.anuncio-vaga h4 {
+    color: #3FA28C;
+}
+
+.menu-lateral{
+    background-color:white;
+}
+
