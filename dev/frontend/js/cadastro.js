@@ -27,8 +27,10 @@ function cadastroFormOnSubmit(event){
         "cadastro": inputDocumento.val()
     };
 
-    insert(perfis[radioButtonPerfil.val()].resource, objeto, (res) => {
-        window.location = "/index.html"
+    const checkedValue = $("input[type=radio][name=inlineRadioOptions]:checked").val();
+
+    insert(perfis[checkedValue].resource, objeto, (res) => {
+        window.location = "index.html"
     })
 }
 
