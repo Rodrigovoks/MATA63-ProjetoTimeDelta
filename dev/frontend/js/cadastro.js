@@ -1,5 +1,5 @@
 
-import { insert } from "./api.js";
+import { post } from "./api.js";
 
 const perfis = {
     "candidato" : {
@@ -29,7 +29,7 @@ function cadastroFormOnSubmit(event){
 
     const checkedValue = $("input[type=radio][name=inlineRadioOptions]:checked").val();
 
-    insert(perfis[checkedValue].resource, objeto, (res) => {
+    post(perfis[checkedValue].resource, objeto, (res) => {
         window.location = "index.html"
     })
 }
