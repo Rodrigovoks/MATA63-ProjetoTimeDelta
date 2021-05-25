@@ -1,0 +1,26 @@
+{
+    "Pessoas":
+    [
+        {
+            "id": 0,
+            "nome": "Rodrigo Souza da Conceição",
+            "email": "rodrigoqsc@ufba.br",
+            "senha": "12345678"
+        },
+        {
+            "id": 1,
+            "nome": "Rodrigo Queiroz Souza da Conceição",
+            "email": "rodrigoqsc@ufba.br",
+            "senha": "12345678"
+        }
+    ],
+    "Empresas":
+    [
+        {
+            "id": 0,
+            "nome": "Empresa1",
+            "email": "empresa@empresa",
+            "senha": "12345678"
+        }
+    ]
+}
