@@ -1,15 +1,26 @@
 
-import { post } from "./api.js";
+import { get } from "./api.js";
+import { setLoggedUser, getLoggedUser, loadNav } from "./app.js";
+
 
 function login(email, password) {
-    const loginObj = {
-        email: email,
-        password: password
-    };
-    post('login', loginObj, (res) => {
-        if(res?.logged){
-            window.location = 'dashboard.html';
-        }else{
+    get('users', (res) => {
+        let loggedUser;
+        let user = res.data.filter(v => {
+            return v.email == email;
+        });
+
+        if (user.length) {
+            if (user[0].password == password) {
+                setLoggedUser(user[0].id);
+            }
+        }
+
+        loggedUser = getLoggedUser();
+
+        if (loggedUser) {
+            window.location = 'index.html';
+        } else {
             showErrorMessage("Erro ao tentar realizar login. Verifique se e-mail e/ou senha estão corretos.");
         }
 
@@ -17,24 +28,24 @@ function login(email, password) {
     });
 }
 
-function hideErrorMessage(){
+function hideErrorMessage() {
     alert.addClass("d-none");
 }
 
-function showErrorMessage(message){
+function showErrorMessage(message) {
     alert.removeClass("d-none");
     alert.html(message);
 }
 
-function showSpinner(){
+function showSpinner() {
     spinner.removeClass("d-none");
 }
 
-function hideSpinner(){
+function hideSpinner() {
     spinner.addClass("d-none");
 }
 
-function onFormLoginSubmit(event){
+function onFormLoginSubmit(event) {
     debugger;
     event.preventDefault();
     showSpinner();
@@ -53,13 +64,19 @@ let spinner, alert;
 
 
 $(function () {
+    spinner = $(".loading-spinner");
+    alert = $(".alert-danger");
     inputEmail = $("#inputEmail");
     inputPassword = $("#inputPassword");
     formLogin = $("#form-login");
-
-
-    spinner = $(".loading-spinner");
-    alert = $(".alert-danger");
     
+    let loggedUser = getLoggedUser();
+
+    if (loggedUser) {
+        $("form").hide();
+        showSpinner();
+        window.location = "index.html";
+    }
+
     formLogin.submit(onFormLoginSubmit);
 });

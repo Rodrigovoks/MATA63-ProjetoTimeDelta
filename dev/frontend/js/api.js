@@ -12,6 +12,15 @@ export async function post(resource, obj, callback) {
     }
 }
 
+export async function get(resource, callback){
+    let res;
+    try {
+        res = await axios.get(URL + resource);
+   } finally {
+       callback(res);
+   }
+}
+
 // export async function login(obj, callback){
 //     let res = await axios.post(URL + 'login', obj);
 
