@@ -1,10 +1,8 @@
-const CompanyRepository = require("../repositories/companies");
-const JobOpportunityRepository = require("../repositories/jobopportunity");
+const { create } = require("../DAO/EmpresasDAO");
 
-function createCompany(req, res) {
-  const company = CompanyRepository.create(req.body);
-
-  if (company) res.json(company);
+function insertCompany(req, res) {
+  const { name, email, area, password } = req.body;
+  res.json(create({ name, email, area, password }));
 }
 
 function getAllCompanies(_, res) {
@@ -20,4 +18,4 @@ function announceJobOpportunity(req, res) {
   res.json(jobOpportunity);
 }
 
-module.exports = { createCompany, getAllCompanies, announceJobOpportunity };
+module.exports = { insertCompany };

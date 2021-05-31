@@ -1,5 +1,7 @@
 const express = require("express");
 const { cInserePessoa, cBuscaPessoa } = require("./controllers/pessoas");
+const { insertCompany } = require("./controllers/companies");
+
 const cors = require("cors");
 
 const app = express();
@@ -14,6 +16,9 @@ app.get("/", (_, res) => {
 
 app.get("/pessoas", cBuscaPessoa);
 app.post("/pessoas", cInserePessoa);
+
+app.get("/empresas", cBuscaPessoa);
+app.post("/empresas", insertCompany);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

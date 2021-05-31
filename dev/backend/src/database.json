@@ -27,10 +27,11 @@
   ],
   "Empresas": [
     {
-      "id": 0,
-      "nome": "Empresa1",
-      "email": "empresa@empresa",
-      "senha": "12345678"
+      "name": "Mediato",
+      "email": "contato@mediato.dev",
+      "area": "Desenvolvimento Web",
+      "password": "12345678",
+      "id": "c95d7d59-eae8-432e-861c-e0d36195a082"
     }
   ]
 }
