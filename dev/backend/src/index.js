@@ -1,10 +1,5 @@
 const express = require("express");
-const { createUser, getAllUsers } = require("./controllers/users");
-const {
-  createCompany,
-  getAllCompanies,
-  announceJobOpportunity,
-} = require("./controllers/companies");
+const { cInserePessoa, cBuscaPessoa } = require("./controllers/pessoas");
 const cors = require('cors');
 
 
@@ -18,13 +13,7 @@ app.get("/", (_, res) => {
   res.json({ message: "koe" });
 });
 
-app.post("/users", createUser);
-app.get("/users", getAllUsers);
-
-app.post("/companies", createCompany);
-app.get("/companies", getAllCompanies);
-
-app.post("/companies/:companyId/announce", announceJobOpportunity);
+app.get("/pessoas", cBuscaPessoa);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
