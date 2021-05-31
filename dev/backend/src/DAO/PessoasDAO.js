@@ -1,24 +1,25 @@
 const { v4: uuidv4 } = require("uuid");
-const { getDatabase } = require("../database.js");
+const { getDatabase, saveDatabase } = require("../database.js");
 
-function buscaPessoas(nomeParcial=null)
-{
-    let pessoas = getDatabase()["Pessoas"];
+function buscaPessoas(nomeParcial = null) {
+  let pessoas = getDatabase()["Pessoas"];
 
-    if(nomeParcial != null)
-    {
-        return pessoas.filter((pessoa)=>{
-            return pessoa['nome'].includes(nomeParcial);
-        });
-    }
+  if (nomeParcial != null) {
+    return pessoas.filter((pessoa) => {
+      return pessoa["nome"].includes(nomeParcial);
+    });
+  }
 
-    return pessoas;
+  return pessoas;
 }
 
-function inserePessoa(pessoa) 
-{
-    pessoa.id = uuidv4();
-    getDatabase["Pessoas"].push(pessoa);
+function inserePessoa(pessoa) {
+  pessoa.id = uuidv4();
+  let database = getDatabase();
+  database["Pessoas"].push(pessoa);
+  saveDatabase(database);
+
+  return pessoa;
 }
 
-module.exports = {buscaPessoas, inserePessoa};
+module.exports = { buscaPessoas, inserePessoa };
