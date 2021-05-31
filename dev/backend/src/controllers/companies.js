@@ -1,4 +1,4 @@
-const { create } = require("../DAO/EmpresasDAO");
+const { create, getAll } = require("../DAO/EmpresasDAO");
 
 function insertCompany(req, res) {
   const { name, email, area, password } = req.body;
@@ -6,7 +6,7 @@ function insertCompany(req, res) {
 }
 
 function getAllCompanies(_, res) {
-  res.json(CompanyRepository.getAll());
+  res.json(getAll());
 }
 
 function announceJobOpportunity(req, res) {
@@ -18,4 +18,4 @@ function announceJobOpportunity(req, res) {
   res.json(jobOpportunity);
 }
 
-module.exports = { insertCompany };
+module.exports = { insertCompany, getAllCompanies };

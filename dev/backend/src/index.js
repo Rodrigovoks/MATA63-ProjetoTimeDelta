@@ -1,6 +1,6 @@
 const express = require("express");
 const { cInserePessoa, cBuscaPessoa } = require("./controllers/pessoas");
-const { insertCompany } = require("./controllers/companies");
+const { insertCompany, getAllCompanies } = require("./controllers/companies");
 
 const cors = require("cors");
 
@@ -17,7 +17,7 @@ app.get("/", (_, res) => {
 app.get("/pessoas", cBuscaPessoa);
 app.post("/pessoas", cInserePessoa);
 
-app.get("/empresas", cBuscaPessoa);
+app.get("/empresas", getAllCompanies);
 app.post("/empresas", insertCompany);
 
 app.listen(port, () => {

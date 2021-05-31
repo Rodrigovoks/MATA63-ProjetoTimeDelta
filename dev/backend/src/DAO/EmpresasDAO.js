@@ -1,16 +1,16 @@
 const { v4: uuidv4 } = require("uuid");
 const { getDatabase, saveDatabase } = require("../database.js");
 
-function buscaPessoas(nomeParcial = null) {
-  let pessoas = getDatabase()["Pessoas"];
+function getAll(nomeParcial = null) {
+  let empresas = getDatabase()["Empresas"];
 
   if (nomeParcial != null) {
-    return pessoas.filter((pessoa) => {
+    return empresas.filter((pessoa) => {
       return pessoa["nome"].includes(nomeParcial);
     });
   }
 
-  return pessoas;
+  return empresas;
 }
 
 function create(company) {
@@ -22,4 +22,4 @@ function create(company) {
   return company;
 }
 
-module.exports = { create };
+module.exports = { create, getAll };
