@@ -1,4 +1,6 @@
+const { request } = require("express");
 const { create, getAll } = require("../DAO/EmpresasDAO");
+const VagasDAO = require("../DAO/VagasDAO");
 
 function insertCompany(req, res) {
   const { name, email, area, password } = req.body;
@@ -10,12 +12,8 @@ function getAllCompanies(_, res) {
 }
 
 function announceJobOpportunity(req, res) {
-  const jobOpportunity = JobOpportunityRepository.create(
-    req.body,
-    req.params.companyId
-  );
-
-  res.json(jobOpportunity);
+  const { role, level, wage, companyId } = req.body;
+  res.json(VagasDAO.create({ role, level, wage, companyId }));
 }
 
-module.exports = { insertCompany, getAllCompanies };
+module.exports = { insertCompany, getAllCompanies, announceJobOpportunity };

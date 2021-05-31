@@ -11,7 +11,6 @@ function loadDatabase() {
 // Salva no arquivo os dados
 function saveDatabase(database) {
   let data = JSON.stringify(database);
-  console.log(database);
   fs.writeFileSync(`${root}/database.json`, data);
 }
 
