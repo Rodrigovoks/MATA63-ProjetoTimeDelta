@@ -4,6 +4,7 @@ const { insertCompany, getAllCompanies } = require("./controllers/companies");
 const {
   announceJobOpportunity,
   getAllOpportunities,
+  attachUserToOpportunity,
 } = require("./controllers/opportunities");
 
 const cors = require("cors");
@@ -26,6 +27,8 @@ app.post("/empresas", insertCompany);
 
 app.get("/vagas", getAllOpportunities);
 app.post("/vagas", announceJobOpportunity);
+
+app.patch("/vagas/candidatar", attachUserToOpportunity);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -22,4 +22,14 @@ function inserePessoa(pessoa) {
   return pessoa;
 }
 
-module.exports = { buscaPessoas, inserePessoa };
+function getUserById(id) {
+  let pessoas = getDatabase()["Pessoas"];
+
+  let pessoa = pessoas.filter((pessoa) => {
+    return pessoa["id"] === id;
+  });
+
+  return pessoa[0];
+}
+
+module.exports = { buscaPessoas, inserePessoa, getUserById };

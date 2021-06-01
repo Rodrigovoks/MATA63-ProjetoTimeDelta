@@ -15,6 +15,7 @@ function getAll(nomeParcial = null) {
 
 function create(vaga) {
   vaga.id = uuidv4();
+  vaga.candidatos = [];
   let database = getDatabase();
   database["Vagas"].push(vaga);
   saveDatabase(database);
@@ -22,4 +23,50 @@ function create(vaga) {
   return vaga;
 }
 
-module.exports = { create, getAll };
+function getOpportunityById(id) {
+  let opportunities = getDatabase()["Vagas"];
+
+  let opportunity = opportunities.filter((opportunity) => {
+    return opportunity["id"] === id;
+  });
+
+  return opportunity[0];
+}
+
+function attach(opportunityId, userId) {
+  let opportunities = getDatabase()["Vagas"];
+
+  let opportunity = opportunities.filter((opportunity) => {
+    return opportunity["id"] === opportunityId;
+  });
+  opportunity = opportunity[0];
+
+  console.log(opportunity);
+  console.log(opportunityId);
+  console.log(userId);
+
+  const index = opportunities.indexOf(opportunity);
+
+  console.log(index);
+
+  opportunity.candidates.push(userId);
+
+  console.log(opportunity);
+
+  opportunities[index] = opportunity;
+
+  let database = getDatabase();
+
+  database["Vagas"] = opportunities;
+
+  saveDatabase(database);
+
+  return opportunity;
+}
+
+module.exports = {
+  create,
+  getAll,
+  getOpportunityById,
+  attach,
+};
