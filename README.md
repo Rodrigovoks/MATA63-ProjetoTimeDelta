@@ -7,4 +7,4 @@ Documentação:
 - Como rodar o projeto backend
 - `npm ci`
 - `node src/index.js`
-- frontend: abrir no index.html no navegador
+- Como rodar o frontend: abrir no index.html no navegador
