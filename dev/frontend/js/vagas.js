@@ -1,11 +1,17 @@
-import { setLoggedUser, getLoggedUser, loadNav } from "./app.js";
+import { getTypeUser, getLoggedUser, loadNav } from "./app.js";
 import {get} from  './api.js';
 
 $(function(){
+    loadNav();
+
+    if(getTypeUser() != 2){
+        window.location = "index.html";
+    }
+
     get('vagas', response => {
         debugger;
         let vagas = response.data.filter(el => {
-            return el.companyId == "c95d7d59-eae8-432e-861c-e0d36195a082";
+            return el.companyId == getLoggedUser();
         });
 
         vagas.forEach(v =>{
@@ -16,7 +22,7 @@ $(function(){
             row.find("button").click(ev => {
                 get('pessoas', response => {
                     debugger;
-                    v.candidatos.forEach(c =>{
+                    v.candidates.forEach(c =>{
                         
                         let candidato = response.data.filter( i => {
                             return i.id == c;
@@ -24,6 +30,7 @@ $(function(){
 
                         let card = $(".candidato-card.d-none").clone().removeClass("d-none");
                         card.find("h5").html(candidato.name);
+                        card.find("a").attr("href", `perfil-candidato.html?id=${candidato.id}`);
                         $(".modal-body").append(card);
                     });
                 });

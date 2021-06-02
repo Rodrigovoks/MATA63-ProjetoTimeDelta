@@ -22,17 +22,19 @@
 <body>
     <nav>
         <div class="row p-3 px-5">
-            <div class="col-3 d-flex align-items-center">
-                <a href="#">
-                    AppMATA33
-                </a>
-            </div>
-            <div class="col-9 d-flex justify-content-end">
-                <a class="btn btn-link" href="cadastro.html">Cadastre-se</a>
-                <a class="btn btn-primary" href="login.html">Entrar</a>
-            </div>
+          <div class="col-3 d-flex align-items-center">
+            <a href="#">
+              AppMATA33
+            </a>
+          </div>
+          <div class="col-9 d-flex justify-content-end">
+            <a class="btn btn-link not-logged" href="cadastro.html">Cadastre-se</a>
+            <a class="btn btn-primary not-logged" href="login.html">Entrar</a>
+            <a class="btn btn-link logged d-none" href="options.html">Painel</a>
+            <button class="btn btn-primary logged d-none" id="btn-sair" type="button">Sair</a>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="content">
         <div class="modals">              
@@ -69,18 +71,16 @@
             <table class="table table-light">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Posição</th>
                     <th scope="col">Empresa</th>
                     <th scope="col">Status</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Desenvolvedor Júnior</td>
-                    <td>Empresa X</td>
-                    <td>Em análise </td>
+                  <tr class="vaga-row d-none">
+                    <td class="posicao">Desenvolvedor Júnior</td>
+                    <td class="empresa">Empresa X</td>
+                    <td class="status">Em análise </td>
  </tr>
                 </tbody>
               </table>
@@ -92,7 +92,7 @@
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/vagas.js" type="module"></script>
+    <script src="js/candidato-vagas.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

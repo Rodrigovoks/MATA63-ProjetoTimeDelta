@@ -1,8 +1,11 @@
-import { loadNav } from "./app.js";
-import { get } from "./api.js";
+import { loadNav, getTypeUser, getLoggedUser } from "./app.js";
+import { get, patch } from "./api.js";
 
 $(function () {
     loadNav();
+    if(getTypeUser() != 1){
+        $(".btn-vaga").hide();
+    }
     get('empresas', empresaResponse  => {
         get('vagas', response => {
             $(".numero-vagas").html(response.data.length);
@@ -20,9 +23,22 @@ $(function () {
                 vagaElement.find(".empresa").html(empresaNome);
                 vagaElement.find(".descricao").html(vaga.description);
                 vagaElement.find(".salario").html(vaga.wage);
+                vagaElement.find("button").click(ev => {
+                    debugger;
+                    let candidatura = {
+                        opportunityId: vaga.id,
+                        userId: getLoggedUser()
+                    }
+
+                    patch('vagas/candidatar', candidatura, (res) =>{
+                        debugger;
+                        window.location = "candidato-vagas.html";
+                    });
+                });
                 $(".anuncios").append(vagaElement);
             });
         });
     });
+    
 
 })

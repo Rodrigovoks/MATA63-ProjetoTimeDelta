@@ -49,6 +49,10 @@ function attach(opportunityId, userId) {
 
   console.log(index);
 
+  if(!opportunity.candidates){
+    opportunity.candidates = [];
+  }
+
   opportunity.candidates.push(userId);
 
   console.log(opportunity);

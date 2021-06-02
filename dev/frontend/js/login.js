@@ -4,27 +4,41 @@ import { setLoggedUser, getLoggedUser, loadNav } from "./app.js";
 
 
 function login(email, password) {
-    get('users', (res) => {
-        let loggedUser;
-        let user = res.data.filter(v => {
-            return v.email == email;
+    get('pessoas', (res) => {
+        get('empresas', (empresasResponse) => {
+            debugger;
+            let loggedUser;
+            let user = res.data.filter(v => {
+                return v.email == email;
+            });
+    
+            if (user.length) {
+                if (user[0].password == password) {
+                    setLoggedUser(user[0].id, 1);
+                }
+            }else{
+                user = empresasResponse.data.filter(v => {
+                    return v.email == email;
+                });
+
+                if (user.length) {
+                    if (user[0].password == password) {
+                        setLoggedUser(user[0].id, 2);
+                    }
+                }
+            }
+    
+            loggedUser = getLoggedUser();
+    
+            if (loggedUser) {
+                window.location = 'index.html';
+            } else {
+                showErrorMessage("Erro ao tentar realizar login. Verifique se e-mail e/ou senha estão corretos.");
+            }
+    
+            hideSpinner();
         });
 
-        if (user.length) {
-            if (user[0].password == password) {
-                setLoggedUser(user[0].id);
-            }
-        }
-
-        loggedUser = getLoggedUser();
-
-        if (loggedUser) {
-            window.location = 'index.html';
-        } else {
-            showErrorMessage("Erro ao tentar realizar login. Verifique se e-mail e/ou senha estão corretos.");
-        }
-
-        hideSpinner();
     });
 }
 

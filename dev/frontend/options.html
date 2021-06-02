@@ -21,17 +21,19 @@
 <body>
     <nav>
         <div class="row p-3 px-5">
-            <div class="col-3 d-flex align-items-center">
-                <a href="#">
-                    AppMATA33
-                </a>
-            </div>
-            <div class="col-9 d-flex justify-content-end">
-                <a class="btn btn-link" href="cadastro.html">Cadastre-se</a>
-                <a class="btn btn-primary" href="login.html">Entrar</a>
-            </div>
+          <div class="col-3 d-flex align-items-center">
+            <a href="#">
+              AppMATA33
+            </a>
+          </div>
+          <div class="col-9 d-flex justify-content-end">
+            <a class="btn btn-link not-logged" href="cadastro.html">Cadastre-se</a>
+            <a class="btn btn-primary not-logged" href="login.html">Entrar</a>
+            <a class="btn btn-link logged d-none" href="options.html">Painel</a>
+            <button class="btn btn-primary logged d-none" id="btn-sair" type="button">Sair</a>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="content">
         <div class="container container-body">
@@ -40,11 +42,13 @@
                     <h2>O que você deseja fazer?</h2>
                 </div>
             </div>
-            <div class="row p-5 justify-content-center">
-                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3" href="criar-vaga.html"><h4><i class="bi bi-folder-plus"></i> <br/> <p>Criar  vaga</p></h4></a></div>
-                <div class="col-3 m-5"><button class="btn btn-primary w-100 h-100 py-3"><h4><i class="bi bi-folder2-open"></i><br/><p>Acompanhar vagas</p></h4></button></div>
-                
-                
+            <div class="row p-5 justify-content-center btn-empresa">
+                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 btn-criar-vagas" href="criar-vaga.html"><h4><i class="bi bi-folder-plus"></i> <br/> <p>Criar  vaga</p></h4></a></div>
+                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 " href="vagas.html"><h4><i class="bi bi-folder2-open"></i><br/><p>Acompanhar vagas</p></h4></a></div>
+            </div>
+            <div class="row p-5 justify-content-center btn-candidato">
+                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 btn-ver-vagas" href="index.html"><h4><i class="bi bi-folder-plus"></i> <br/> <p>Ver vagas</p></h4></a></div>
+                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 btn-candidaturas" href="candidato-vagas.html"><h4><i class="bi bi-folder2-open"></i><br/><p>Acompanhar candidaturas</p></h4></a></div>
             </div>
 
         </div>
@@ -54,7 +58,6 @@
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/login.js" type="module"></script>
     <script src="js/options.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="

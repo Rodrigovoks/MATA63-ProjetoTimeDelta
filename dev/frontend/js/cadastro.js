@@ -4,11 +4,11 @@ import { post } from "./api.js";
 const perfis = {
     "candidato" : {
         "label" : "CPF",
-        "resource": "users"
+        "resource": "pessoas"
     },
     "empresa" : {
         "label": "CNPJ",
-        "resource": "companies"
+        "resource": "empresas"
     }
 }
 

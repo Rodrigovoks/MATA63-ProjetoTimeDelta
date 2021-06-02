@@ -2,97 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link href="css/login.css" rel="stylesheet">
-    <link href="css/app.css" rel="stylesheet">
-    <link href="css/vagas.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
-    </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link href="css/login.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+  <link href="css/vagas.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <title>Document</title>
+  </script>
+
+  <title>Document</title>
 
 </head>
 
 <body>
-    <nav>
-        <div class="row p-3 px-5">
-            <div class="col-3 d-flex align-items-center">
-                <a href="#">
-                    AppMATA33
-                </a>
-            </div>
-            <div class="col-9 d-flex justify-content-end">
-                <a class="btn btn-link" href="cadastro.html">Cadastre-se</a>
-                <a class="btn btn-primary" href="login.html">Entrar</a>
-            </div>
-        </div>
-    </nav>
+  <nav>
+    <div class="row p-3 px-5">
+      <div class="col-3 d-flex align-items-center">
+        <a href="#">
+          AppMATA33
+        </a>
+      </div>
+      <div class="col-9 d-flex justify-content-end">
+        <a class="btn btn-link not-logged" href="cadastro.html">Cadastre-se</a>
+        <a class="btn btn-primary not-logged" href="login.html">Entrar</a>
+        <a class="btn btn-link logged d-none" href="options.html">Painel</a>
+        <button class="btn btn-primary logged d-none" id="btn-sair" type="button">Sair</a>
+      </div>
+    </div>
+  </nav>
 
-    <div class="content">
-        <div class="modals">              
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Candidatos</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="candidato-card d-none p-2 m-1">
-                          <div class="row">
-                              <div class="col-10 d-flex align-items-center">
-                                  <h5>Candidato da Silva</h5>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
+  <div class="content">
+    <div class="modals">
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Candidatos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="candidato-card d-none p-2 m-1">
+                <div class="row">
+                  <div class="col-10 d-flex align-items-center">
+                    <a href=""><h5>Candidato da Silva</h5></a>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
         </div>
-        <div class="container container-body">
-            <h2 class="py-4">Vagas cadastradas</h2>
-            <table class="table table-light">
-                <thead>
-                  <tr>
-                    
-                    <th scope="col">Posição</th>
-                    <th scope="col">Vagas disponíveis</th>
-                    <th scope="col">Tipo contrato</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="vaga-row d-none">
-                    <td class="posicao">Desenvolvedor Júnior</td>
-                    <td class="vagas">22</td>
-                    <td class="contrato">CLT</td>
-                    <td><button type="button" class="btn btn-link p-0 btn-candidatos" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver candidatos</button></td>
-                  </tr>
-                </tbody>
-              </table>
-
-        </div>
+      </div>
     </div>
+    <div class="container container-body">
+      <h2 class="py-4">Vagas cadastradas</h2>
+      <table class="table table-light">
+        <thead>
+          <tr>
+
+            <th scope="col">Posição</th>
+            <th scope="col">Vagas disponíveis</th>
+            <th scope="col">Tipo contrato</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="vaga-row d-none">
+            <td class="posicao">Desenvolvedor Júnior</td>
+            <td class="vagas">22</td>
+            <td class="contrato">CLT</td>
+            <td><button type="button" class="btn btn-link p-0 btn-candidatos" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Ver candidatos</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
 
 
-    <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/vagas.js" type="module"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-        crossorigin="anonymous"></script>
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="js/vagas.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

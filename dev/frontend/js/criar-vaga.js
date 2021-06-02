@@ -1,4 +1,4 @@
-import {getLoggedUser} from './app.js';
+import {getLoggedUser, getTypeUser, loadNav} from './app.js';
 import {post} from  './api.js';
 
 function criarVagaOnSubmit(event){
@@ -11,7 +11,7 @@ function criarVagaOnSubmit(event){
         wage: inputSalario.val(),
         availableOpportunities: inputVagas.val(),
         description: inputRequisitos.val(),
-        companyId: 1
+        companyId: getLoggedUser()
     }
 
     debugger;
@@ -24,11 +24,11 @@ function criarVagaOnSubmit(event){
 let inputArea, inputTipoContrato, inputRequisitos, inputSalario, inputVagas
 
 $(function(){
-    // let user = getLoggedUser();
+    loadNav();
 
-    // if(!user){
-    //     window.location = "login.html";
-    // }
+    if(getTypeUser() != 2){
+        window.location = "index.html";
+    }
 
     inputArea = $("#inputArea");
     inputTipoContrato = $("#inputContrato");

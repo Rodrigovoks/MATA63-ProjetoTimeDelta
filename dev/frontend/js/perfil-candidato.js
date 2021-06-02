@@ -1,7 +1,8 @@
 import {get} from  './api.js';
-
+import {loadNav } from "./app.js";
 $(function(){
     debugger;
+    loadNav();
     const urlParams = new URLSearchParams(window.location.search);
     const candidatoId = urlParams.get('id');
 
