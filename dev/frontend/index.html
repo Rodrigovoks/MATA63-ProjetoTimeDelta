@@ -36,7 +36,7 @@
 
             <div class="row py-3">
                 <div class="vaga-quantidade-disponivel mt-4">
-                    <h6> 213 vagas disponíveis</h6>
+                    <h6> <span class="numero-vagas">213</span> vagas disponíveis</h6>
                 </div>
                 <div class="col-3">
                     <div class="row p-3 menu-lateral">
@@ -46,20 +46,21 @@
 
                     </div>
                 </div>
-                <div class="col-9">
-                    <div class="anuncio-vaga p-3">
+                <div class="col-9 anuncios">
+                    <div class="anuncio-vaga p-3 d-none ">
                         <div class="row pb-4">
                             <div class="col-8">
                                 <h4>Desenvolvedor Júnior</h4>
-                                <span class="d-block"> <i class="bi bi-people"></i> 6 vagas</span>
-                                <span class="d-block"><i class="bi bi-building"></i> Empresa X</span>
+                                <span class="d-block"> <i class="bi bi-people"></i> <span class="vagas">6</span> vagas</span>
+                                <span class="d-block"><i class="bi bi-building"></i> <span class="empresa">Empresa X</span></span>
+                                <span class="d-block"><i class="bi bi-currency-dollar"></i> <span class="salario">Empresa X</span></span>
                             </div>
-                            <div class="col-4 d-flex justify-content-end">
+                            <!-- <div class="col-4 d-flex justify-content-end">
                                 <span class="text-muted text-postado-em">Postado hoje, às 16:30</span>
-                            </div>
+                            </div> -->
                         </div>
 
-                        <p class="vaga-descricao">
+                        <p class="descricao">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
                             galley of type and scrambled it to make a type specimen book. It has survived not only five
@@ -70,31 +71,6 @@
                         </p>
                         <button class="btn btn-success btn-vaga">Quero essa vaga!</button>
                     </div>
-                    <div class="anuncio-vaga p-3">
-                        <div class="row pb-4">
-                            <div class="col-8">
-                                <h4>Desenvolvedor Júnior</h4>
-                                <span class="d-block"> <i class="bi bi-people"></i> 6 vagas</span>
-                                <span class="d-block"><i class="bi bi-building"></i> Empresa X</span>
-                            </div>
-                            <div class="col-4 d-flex justify-content-end">
-                                <span class="text-muted text-postado-em">Postado hoje, às 16:30</span>
-                            </div>
-                        </div>
-
-                        <p class="vaga-descricao">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
-                        </p>
-                        <button class="btn btn-success btn-vaga">Quero essa vaga!</button>
-                    </div>
-
-
                 </div>
             </div>
         </div>
@@ -107,6 +83,9 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/index.js" type="module"></script>
 </body>

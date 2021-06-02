@@ -21,10 +21,10 @@ function cadastroFormOnSubmit(event){
     event.preventDefault();
     
     const objeto = {
-        "nome" : inputNome.val(),
+        "name" : inputNome.val(),
         "email": inputEmail.val(),
         "password": inputPassword.val(),
-        "cadastro": inputDocumento.val()
+        "documentNumber": inputDocumento.val()
     };
 
     const checkedValue = $("input[type=radio][name=inlineRadioOptions]:checked").val();

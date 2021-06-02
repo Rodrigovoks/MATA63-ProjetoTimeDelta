@@ -8,8 +8,8 @@ const {
 const { getUserById } = require("../DAO/PessoasDAO");
 
 function announceJobOpportunity(req, res) {
-  const { role, level, wage, companyId } = req.body;
-  res.json(create({ role, level, wage, companyId }));
+  const { description, role, availableOpportunities, contractType, wage, companyId } = req.body;
+  res.json(create({ role, description, availableOpportunities, contractType, wage, companyId }));
 }
 
 function getAllOpportunities(req, res) {

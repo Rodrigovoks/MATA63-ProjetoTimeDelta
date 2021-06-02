@@ -37,39 +37,37 @@
                     <h4 class="mb-4">Criar vaga</h4>
                     <form id="form-vaga">
                         <div class="mb-3 form-group">
-                            <div class="mb-3 form-group">
-                                <label for="inputArea" class="form-label">Área de atuação</label>
-                                <input type="text" class="form-control" id="inputArea" required>
-                            </div>
-                            <div class="mb-3 form-group">
-                                <label for="inputSalario" class="form-label">Salário</label>
-                                <input type="email" class="form-control" id="inputSalario">
-                            </div>
-                            <div>
-                                <label for="inlineRadioOptions" class="form-label">Tipo de contrato</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inputContrato" id="inlineRadio1"
-                                    value="clt" checked>
-                                <label class="form-check-label" for="inlineRadio1">CLT</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inputContrato" id="inlineRadio2"
-                                    value="pj">
-                                <label class="form-check-label" for="inlineRadio2">Pessoa Juridica</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inputContrato" id="inlineRadio3"
-                                    value="estagio">
-                                <label class="form-check-label" for="inlineRadio3">Estágio</label>
-                            </div>
+                            <label for="inputArea" class="form-label">Área de atuação</label>
+                            <input type="text" class="form-control" id="inputArea" required>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="inputSalario" class="form-label">Salário</label>
+                            <input type="text" class="form-control" id="inputSalario">
+                        </div>
+                        <div>
+                            <label for="inlineRadioOptions" class="form-label">Tipo de contrato</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inputContrato" id="inlineRadio1"
+                                value="clt" checked>
+                            <label class="form-check-label" for="inlineRadio1">CLT</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inputContrato" id="inlineRadio2"
+                                value="pj">
+                            <label class="form-check-label" for="inlineRadio2">Pessoa Juridica</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inputContrato" id="inlineRadio3"
+                                value="estagio">
+                            <label class="form-check-label" for="inlineRadio3">Estágio</label>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="inputVagas" class="form-label">Vagas disponíveis</label>
                             <input type="number" class="form-control" id="inputVagas" required>
                         </div>
                         <div class="mb-3 form-group">
-                            <label for="inputRequisitos" class="form-label">Requisitos</label>
+                            <label for="inputRequisitos" class="form-label">Descrição</label>
                             <textarea class="form-control" id="inputRequisitos" rows="5"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar</button>
