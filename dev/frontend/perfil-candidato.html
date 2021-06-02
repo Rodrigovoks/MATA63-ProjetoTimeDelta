@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link href="css/login.css" rel="stylesheet">
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    
-    </script>
 
     <title>Document</title>
-
 </head>
+
 
 <body>
     <nav>
@@ -34,37 +32,43 @@
           </div>
         </div>
       </nav>
-
     <div class="content">
         <div class="container container-body">
-            <div class="row pt-5">
-                <div class="col-12 text-center">
-                    <h2>O que você deseja fazer?</h2>
+            <div class="row justify-content-center p-4">
+                <div class="col-8 p-3 section">
+                    <h4 class="mb-4">Candidato da Silva</h4>
+                    <div class="row">
+                        <div class="col-3 fw-bold">CPF: </div>
+                        <div class="col-9 documento"> 273.283.726-32</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 fw-bold">Email: </div>
+                        <div class="col-9 email"> candidato@hotmail.com</div>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-5">Aprovar</button>
+                    <button type="submit" class="btn btn-danger mt-5">Recusar</button>
                 </div>
             </div>
-            <div class="row p-5 justify-content-center btn-empresa">
-                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 btn-criar-vagas" href="criar-vaga.html"><h4><i class="bi bi-folder-plus"></i> <br/> <p>Criar  vaga</p></h4></a></div>
-                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 " href="vagas.html"><h4><i class="bi bi-folder2-open"></i><br/><p>Acompanhar vagas</p></h4></a></div>
-            </div>
-            <div class="row p-5 justify-content-center btn-candidato">
-                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 btn-ver-vagas" href="index.html"><h4><i class="bi bi-folder-plus"></i> <br/> <p>Ver vagas</p></h4></a></div>
-                <div class="col-3 m-5"><a class="btn btn-primary w-100 h-100 py-3 btn-candidaturas" href="candidato-vagas.html"><h4><i class="bi bi-folder2-open"></i><br/><p>Acompanhar candidaturas</p></h4></a></div>
-            </div>
-
         </div>
     </div>
+
+
+
+
+
 
 
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/options.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/perfil-candidato.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>

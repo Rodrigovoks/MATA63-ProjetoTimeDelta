@@ -1,12 +1,13 @@
 const { buscaPessoas, inserePessoa } = require("../DAO/PessoasDAO");
 
 function cInserePessoa(req, res) {
-  const { nome, email, senha } = req.body;
+  const { name, email, password, documentNumber } = req.body;
   res.json(
     inserePessoa({
-      nome,
+      name,
       email,
-      senha,
+      password,
+      documentNumber
     })
   );
 }

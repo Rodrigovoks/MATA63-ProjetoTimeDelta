@@ -1,28 +1,33 @@
-import { fileURLToPath } from 'url';
-import {getLoggedUser} from './app.js';
+import {getLoggedUser, getTypeUser, loadNav} from './app.js';
 import {post} from  './api.js';
 
 function criarVagaOnSubmit(event){
+    debugger;
+    event.preventDefault();
+
     let vaga = {
-        areaAtuacao = inputArea.val(),
-        tipoContrato = inputTipoContrato.val(),
-        salario = inputSalario.val(),
-        vagas = inputVagas.val(),
-        requisitos = inputRequisitos.val()
+        role: inputArea.val(),
+        contractType: inputTipoContrato.val(),
+        wage: inputSalario.val(),
+        availableOpportunities: inputVagas.val(),
+        description: inputRequisitos.val(),
+        companyId: getLoggedUser()
     }
 
-    post('jobOpportunity', vaga, () => {
-        alert("sucesso");
+    debugger;
+    
+    post('vagas', vaga, (response) => {
+        window.location = "index.html";
     })
 }
 
 let inputArea, inputTipoContrato, inputRequisitos, inputSalario, inputVagas
 
 $(function(){
-    let user = getLoggedUser();
+    loadNav();
 
-    if(!user){
-        window.location = "login.html";
+    if(getTypeUser() != 2){
+        window.location = "index.html";
     }
 
     inputArea = $("#inputArea");
@@ -31,5 +36,5 @@ $(function(){
     inputSalario = $("#inputSalario");
     inputVagas = $("#inputVagas");
 
-    $("form-vaga").submit(criarVagaOnSubmit);
+    $("#form-vaga").submit(criarVagaOnSubmit);
 });

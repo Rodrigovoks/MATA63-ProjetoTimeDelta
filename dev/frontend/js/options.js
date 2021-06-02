@@ -1,10 +1,13 @@
-import {getLoggedUser} from './app.js';
+import { loadNav, getTypeUser } from "./app.js";
 
 $(function(){
-    let user = getLoggedUser();
+    debugger;
+    loadNav();
 
-    if(!user){
-        window.location = "login.html";
+    if(getTypeUser() == 1){
+        $(".btn-empresa").hide();
+    }else if(getTypeUser() == 2){
+        $(".btn-candidato").hide();
     }
 
 });
