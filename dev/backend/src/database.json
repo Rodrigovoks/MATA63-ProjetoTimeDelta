@@ -1,1 +1,52 @@
-{"Pessoas":[{"id":"8e574136-a8e2-4ddb-994c-fac4d38d7cc5","nome":"Rodrigo Souza da Conceição","email":"rodrigoqsc@ufba.br","senha":"12345678"},{"id":"9380b8a7-1a2d-4dfd-b51d-49978e4f15c1","nome":"Rodrigo Queiroz Souza da Conceição","email":"rodrigoqsc@ufba.br","senha":"12345678"},{"nome":"Matheus","email":"eu@hofs.dev","senha":"12345678","id":"d4ef90ce-0af5-4f4f-aaf5-90c40815a253"},{"nome":"Matheus","email":"eu@hofs.dev","senha":"12345678","id":"bffeef2d-0a51-4b25-b0c3-345982633116"}],"Empresas":[{"name":"Mediato","email":"contato@mediato.dev","area":"Desenvolvimento Web","password":"12345678","id":"c95d7d59-eae8-432e-861c-e0d36195a082"}],"Vagas":[{"role":"Dev mobile","level":"pleno","wage":"a combinar","companyId":"c95d7d59-eae8-432e-861c-e0d36195a082","id":"262b841c-c493-421c-9b84-e804d33e010c","candidates":["bffeef2d-0a51-4b25-b0c3-345982633116"]}]}
+{
+    "Pessoas": [
+        {
+            "id": "8e574136-a8e2-4ddb-994c-fac4d38d7cc5",
+            "nome": "Rodrigo Souza da Conceição",
+            "email": "rodrigoqsc@ufba.br",
+            "senha": "12345678"
+        },
+        {
+            "id": "9380b8a7-1a2d-4dfd-b51d-49978e4f15c1",
+            "nome": "Rodrigo Queiroz Souza da Conceição",
+            "email": "rodrigoqsc@ufba.br",
+            "senha": "12345678"
+        },
+        {
+            "nome": "Matheus",
+            "email": "eu@hofs.dev",
+            "senha": "12345678",
+            "id": "d4ef90ce-0af5-4f4f-aaf5-90c40815a253"
+        },
+        {
+            "nome": "Matheus",
+            "email": "eu@hofs.dev",
+            "senha": "12345678",
+            "id": "bffeef2d-0a51-4b25-b0c3-345982633116"
+        }
+    ],
+    "Empresas": [
+        {
+            "name": "Mediato",
+            "email": "contato@mediato.dev",
+            "area": "Desenvolvimento Web",
+            "password": "12345678",
+            "id": "c95d7d59-eae8-432e-861c-e0d36195a082"
+        }
+    ],
+    "Vagas": [
+        {
+            "role": "Dev mobile",
+            "level": "pleno",
+            "wage": "a combinar",
+            "companyId": "c95d7d59-eae8-432e-861c-e0d36195a082",
+            "id": "262b841c-c493-421c-9b84-e804d33e010c",
+            "candidates": [
+                "bffeef2d-0a51-4b25-b0c3-345982633116"
+            ]
+        }
+    ],
+    "Candidaturas":[
+        
+    ]
+}

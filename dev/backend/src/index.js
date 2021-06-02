@@ -1,5 +1,6 @@
 const express = require("express");
 const { cInserePessoa, cBuscaPessoa } = require("./controllers/pessoas");
+const { cInsereCandidatura, cBuscaCandidatura, cAtualizaCandidatura } = require("./controllers/candidaturas");
 const { insertCompany, getAllCompanies } = require("./controllers/companies");
 const {
   announceJobOpportunity,
@@ -27,6 +28,9 @@ app.post("/empresas", insertCompany);
 
 app.get("/vagas", getAllOpportunities);
 app.post("/vagas", announceJobOpportunity);
+
+app.get("/candidaturas", cBuscaCandidatura);
+app.post("/candidaturas", cInsereCandidatura);
 
 app.patch("/vagas/candidatar", attachUserToOpportunity);
 
